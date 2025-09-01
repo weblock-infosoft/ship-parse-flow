@@ -14,7 +14,117 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      parsing_logs: {
+        Row: {
+          created_at: string
+          error_message: string | null
+          extracted_data: Json | null
+          file_name: string
+          file_url: string | null
+          id: string
+          processed_by: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          error_message?: string | null
+          extracted_data?: Json | null
+          file_name: string
+          file_url?: string | null
+          id?: string
+          processed_by?: string | null
+          status: string
+        }
+        Update: {
+          created_at?: string
+          error_message?: string | null
+          extracted_data?: Json | null
+          file_name?: string
+          file_url?: string | null
+          id?: string
+          processed_by?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      shipment_orders: {
+        Row: {
+          address: string
+          created_at: string
+          created_by: string | null
+          customer_name: string
+          delivery_date: string | null
+          id: string
+          notes: string | null
+          original_file_name: string | null
+          original_file_url: string | null
+          package_weight: number | null
+          parsed_by_ai: boolean | null
+          status: string | null
+          tracking_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          created_by?: string | null
+          customer_name: string
+          delivery_date?: string | null
+          id?: string
+          notes?: string | null
+          original_file_name?: string | null
+          original_file_url?: string | null
+          package_weight?: number | null
+          parsed_by_ai?: boolean | null
+          status?: string | null
+          tracking_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          created_by?: string | null
+          customer_name?: string
+          delivery_date?: string | null
+          id?: string
+          notes?: string | null
+          original_file_name?: string | null
+          original_file_url?: string | null
+          package_weight?: number | null
+          parsed_by_ai?: boolean | null
+          status?: string | null
+          tracking_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
